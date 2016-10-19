@@ -1,5 +1,4 @@
 require "imdb"
-require_relative("movie_list.rb")
 require_relative("movie_info.rb")
 
 # class MovieRater
@@ -34,22 +33,23 @@ movie_info = []
 
 create_movie_list(empirical_array)
 create_list(empirical_array, movie_info)
-
-puts empirical_array
-puts movie_info[0][:title]
-puts movie_info[0][:rating]
+y = 0
+for x in 1..7
+	puts movie_info[y][:title]
+	puts movie_info[y][:rating]
+	y += 1
+end
 
 
 current = 0
-ratingnumba = 8
-x = 1
-for x in 1..9
+ratingnumba = 10
+for x in 1..10
 	while current < movie_info.length
 		if movie_info[current][:rating] > ratingnumba
 			if current == movie_info.length - 1 
 				puts "|x|"
 			else
-			print "|x"
+				print "|x"
 			end
 		else 
 			if current == movie_info.length - 1
@@ -61,4 +61,5 @@ for x in 1..9
 	current += 1
 	end
 	ratingnumba -= 1
+	current = 0
 end
