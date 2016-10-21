@@ -1,3 +1,10 @@
+module SalaryCalculator
+	def calculate
+		@salary/52
+	end
+end
+
+
 class Employee
 	attr_reader :name, :email
     def initialize(name, email)
@@ -20,17 +27,19 @@ class HourlyEmployee < Employee
 end
 
 class SalaryEmployee < Employee
+	include SalaryCalculator
 	def initialize (name, email, salary)
 		@name = name
 		@email = email
 		@salary = salary
 	end
 	def calculate_salary
-		weekly_salary = @salary / 52
+		calculate
 	end
 end
 
 class MultiPaymentEmployee < Employee
+	include SalaryCalculator
 	def initialize (name, email, salary, extrapay, totalhours)
 		@name = name
 		@email = email
@@ -43,9 +52,9 @@ class MultiPaymentEmployee < Employee
 		if @totalhours > 40 
 			extrahours = @totalhours - 40
 			extrapayment = @extrapay * extrahours
-			totalsalary = (@salary/52) + extrapayment
+			totalsalary = calculate + extrapayment
 		else
-			weekly_salary = @salary / 52
+			weekly_salary = calculate
 		end
 	end
 

@@ -63,3 +63,10 @@ for x in 1..10
 	ratingnumba -= 1
 	current = 0
 end
+for number in 1..7
+	if number < 7
+		print "|#{number}"
+	else
+		puts "#{number}|"
+end
+end
