@@ -1,0 +1,15 @@
+<html>
+<form action="/results" method="POST">
+<% 	jays = Calculator.new(params[:numberone], params[:numbertwo]) %>
+<%if params[:operation] == "add" %>
+	<%= @resulte = jays.add%>
+	<%elsif params[:operation] == "divide"%>
+	<%= @resulte =jays.divide%>
+<% elsif params[:operation] == "multiply" %>
+	<%= @resulte =jays.multiply%>
+<% elsif params[:operation] == "subtract"%>
+	<%= @resulte = jays.subtract%>
+	<%end%>
+<ul><button type="submit" name="results" value="">Save Results</button></ul>
+</form>
+</html>
