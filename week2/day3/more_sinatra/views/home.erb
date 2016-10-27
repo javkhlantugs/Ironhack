@@ -1,6 +1,12 @@
 <h1>Homepage</h1>
 <h2>Wsup chigga</h2>
 <a href="https://en.wikipedia.org/wiki/Hillary_Clinton" target="_blank"><img src="http://i.imgur.com/wFovN4O.gif" alt = "Hillary goin kray"  style="width:260px;height:260px;"></a>
+<% if @drank != nil%>
+<p>
+Your selected beverage is:
+<strong><%= @drank%></strong>
+</p>
+<%end%>
 <ul>
 	<li>
 		<a href="/" class="myButton"> Home</a>

@@ -1,28 +1,27 @@
-require 'date'~
+require 'date'
 class Task
 	attr_reader :content, :id, :completed
 	@@current_id = 1
 	def initialize (content)
 		@created_at = DateTime.now
-		@completed = "uncomplete"
+		@completed = false
 		@content = content
 		@id = @@current_id
 		@@current_id += 1
 	end
 	def completed?
-		if @completed == "complete"
-			true
-		else
-			false
-		end
+		@completed
 	end
 	def complete!
-		@completed = "complete"
+		@completed = true
 	end
 	def make_incomplete!
-		@completed = "uncomplete"
+		@completed = false
 	end
 	def update_content!(new_content)
 		@content = new_content
+	end
+	def show_content
+		@content
 	end
 end

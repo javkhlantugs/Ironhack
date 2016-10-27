@@ -1,7 +1,20 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 require "pry" if development?
+
+enable(:sessions)
+
+
+
+
+
+get "/save_to_session/:thing" do
+	session[:beverage] = params[:thing]
+	redirect to("/")
+end
+
 get "/" do 
+	@drank = session[:beverage]
 	erb(:home)
 end
 

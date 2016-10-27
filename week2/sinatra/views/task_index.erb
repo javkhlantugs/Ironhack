@@ -1,0 +1,11 @@
+<html>
+<p>
+<b><a href="/new_task" target="_blank">Add new task</a></b>
+</p>
+<p>
+<li>
+<% @instance.each do |x|%>
+<%=  x.content %><br></li>
+<% end%>
+</p>
+</html>

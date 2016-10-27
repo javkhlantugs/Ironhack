@@ -22,6 +22,6 @@ RSpec.describe Task do
 			it "content updating method" do
 				expect(@tsk.update_content!("blow a bag")).to eq ("blow a bag")
 			end
-		end
+	end
 end
 
