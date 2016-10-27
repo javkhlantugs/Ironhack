@@ -4,8 +4,18 @@
 </p>
 <p>
 <% @instance.each do |x|%>
-<%= x.content %> <form action="/complete" method="POST"><button type="submit" name="task_id" value="<%= x.id %>">
+<% if x.completed? == true %>
+<%= "> [X] #{x.content}" %> 
+<%else%>
+<%= "> #{x.content}" %>
+<%end%><form action="/complete" method="POST">
+<% if x.completed? == false%>
+<button type="submit" name="task_id" value="<%= x.id %>">
 Complete</button></form><br>
-<% end%>
+<% else %>
+<button type="submit" name="task_id" value="<%= x.id %>">
+Not Complete</button></form><br>
+<% end %>
+<%end%>
 </p>
 </html>
