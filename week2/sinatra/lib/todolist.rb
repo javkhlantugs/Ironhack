@@ -15,12 +15,13 @@ class TodoList
 			end
 	end
 	def find_task_by_id(task_id)
-		if task_id < @list.length
-		@list.find do |the_task|
+		found_task = @list.find do |the_task|
 			the_task.id == task_id
 			end
+		if found_task == nil
+				nil
 		else
-			nil
+			found_task
 		end
 	end
 	def sort_tasks

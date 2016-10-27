@@ -18,5 +18,14 @@ post "/create_task" do
 	redirect("/tasks")
 end
 
-get "/complete" do
+post "/complete" do
+	id = params[:task_id].to_i
+	task = todolist.find_task_by_id(id)
+	# if params[:task_id]
+	if task.completed? == true
+		task.make_incomplete!
+	else
+		task.complete!
+	end	
+	redirect("/tasks")
 end
