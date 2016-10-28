@@ -22,6 +22,12 @@ class Blog
 		@page_start -= 3
 		@page_end -= 3
 	end
+	def latest_posts
+		@posts.sort_by do |post|
+			post.date
+		end
+		@posts.reverse
+	end
 
 
 	def publish_front_page

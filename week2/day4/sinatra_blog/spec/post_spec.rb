@@ -11,7 +11,7 @@ RSpec. describe Post do
 	end
 
 	it("return date ") do
-		expect(@post1.date).to eq Time.now
+		expect(@post1.date).to be_within(0.1).of Time.now
 	end
 	it("return text") do
 		expect(@post1.text).to eq "teext"

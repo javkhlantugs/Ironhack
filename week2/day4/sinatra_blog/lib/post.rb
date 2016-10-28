@@ -1,3 +1,5 @@
+require "date"
+
 class Post
 	attr_accessor(:title, :date, :text)
 
@@ -6,14 +8,5 @@ class Post
 		@date = Time.now
 		@text = text
 		#@sponsored = sponsored
-	end
-
-	def print
-		puts @title
-		puts "-----------------"
-		puts @text
-		puts ""
-		puts "<=================>"
-		puts ""
 	end
 end

@@ -5,7 +5,7 @@ require_relative ("lib/task.rb")
 
 todolist = TodoList.new("jays")
 
-get "/tasks" do
+get "/" do
 	@instance = todolist.list
 	erb (:task_index)
 end
@@ -15,7 +15,7 @@ end
 post "/create_task" do
 	a_task = Task.new (params[:newtask])
 	todolist.add_task(a_task)
-	redirect("/tasks")
+	redirect("/")
 end
 
 post "/complete" do
@@ -27,5 +27,5 @@ post "/complete" do
 	else
 		task.complete!
 	end	
-	redirect("/tasks")
+	redirect("/")
 end
