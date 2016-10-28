@@ -17,3 +17,7 @@ get "/post_details/:id" do
 	@post = blog.posts[number]
 	erb(:post_details)
 end
+
+get "/new_post" do
+	end
+	
