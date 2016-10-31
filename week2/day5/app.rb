@@ -17,10 +17,10 @@ post "/search_results" do
 	@refined_movies = @movies[0..14]
 	the_movie.add_movies(@refined_movies)
 	@posters = the_movie.search_for_poster
-	@poster_years = @posters.map do |movie|
+	@sliced = @posters.slice(0, 8)
+	@poster_years = @sliced.map do |movie|
 		movie.year
 	end
-	
-	@random_year = @poster_years.sample
+	@random_year = @sliced.sample
 	erb :results
 end
