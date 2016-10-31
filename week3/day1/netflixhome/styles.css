@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Jayfonte'; /*a name to be used later*/
+    src: url('ProximaNova-Light.otf'); /*URL to font*/
+}
+#logo {
+	position: absolute;
+	top: 440px;
+	zoom: 7%;
+	left: 500px;
+
+	padding-top: 0;
+
+}
+
+.button.top {
+	position: absolute;
+	right: 50px;
+	top: 35px;
+	background-color: #e50913;
+	padding: 8px 45px;
+	font-size: 17px;
+	margin-top: 0;
+	margin-bottom; 0;
+	font-family: "Jayfonte";
+}
+.top {
+	display: inline-block;
+}
+
+.page {
+	background-image:url("sample/family.jpg");
+	background-size: cover;
+	height: 100vh;
+}
+.text{
+	color: white;
+	font-size: 35px;
+	width: 370px;
+	font-family: 'Jayfonte';
+}
+.button.blue {
+	left: 50%;
+	text-align: center;
+	background-color: #419af9;
+	width: 60%;
+	position: relative;
+	left: 20%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.banner {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 10px;
+	position: absolute;
+	top: 25%;
+	left: 33%;
+	font-family: "Jayfonte";
+}
+
+.bottom {
+	margin-left: 40px;
+	margin-bottom: 50px;
+}
+#release {
+	font-size: 25px;
+	margin-top: 50px;
+	margin-bottom: 40px;
+	font-family: 'Jayfonte';
+}
+
+.art {
+	zoom: 45%;
+	margin-right: 4%;
+}
+
+#shit {
+	height: 432px;
+	width: 304px;
+}
+
+
+footer {
+	height: 30px;
+	background-color: black;
+}
