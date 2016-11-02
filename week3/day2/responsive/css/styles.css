@@ -1,0 +1,29 @@
+body,
+html,
+.pizza-header{
+	height: 100%;
+}
+body {
+	margin: 0 0 10px 0;
+}
+.pizza-header {
+background-image: url("https://media.giphy.com/media/MI4YqGxkFVQQg/giphy.gif");
+background-size: contain;
+background-repeat: no-repeat;
+color: pink;
+}
+h1 {
+	font-size: 60px;
+}
+
+@media screen and (min-width: 768px)
+{
+	.pizza-header {
+		background-image: url("https://media.giphy.com/media/xT8qB436gZpXdBw304/giphy.gif")
+	}
+}
+@media screen and (min-width: 992px) {
+	.pizza-header {
+		background-image: url("https://media.giphy.com/media/l0MYMmXE0D6Ng8S2c/giphy.gif");
+	}
+}

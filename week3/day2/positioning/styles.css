@@ -1,0 +1,28 @@
+code {
+	background: #2db34a;
+	border-radius: 6px;
+	color: #fff;
+	display: block;
+	padding: 24px 15px;
+	text-align: center;
+}
+section {
+	position: absolute;
+	bottom: 200px;
+	right: 400px;
+}
+header,
+section,
+aside,
+footer {
+	margin: 0 1.5% 24px 1.5%;
+	border: 1px solid black;
+}
+
+aside {
+	float: right;
+}
+
+.iamge {
+	overflow: auto;
+}
