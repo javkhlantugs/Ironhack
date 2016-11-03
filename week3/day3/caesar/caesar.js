@@ -18,7 +18,7 @@ function caesarCipher(message, splitt) {
 					var theChar = 97 + jay;
 					return String.fromCharCode(theChar);
 				}else if (total < 65) {
-					var yo = 65 - total
+					var yo = 64 - total
 					var theChar = 97 - yo
 					return String.fromCharCode(theChar);
 				}else{
