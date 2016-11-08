@@ -1,4 +1,19 @@
 <h2>Lorem Ipsum generator</h2>
 <form method="post" action="lipsum/create">
-<input type="number" name="">
+<ul>
+<li>
+<p>Please choose</p>
+<select name="choice">
+	<option value='paragraph'>Paragraph</option>
+	<option value='sentence'>Sentence</option>
+	</select>
+	</li>
+	<li>
+	<p>Please select amount</p>
+	<input type="number" name="user_input">
+	</li>
+	</ul>
+	<button type='submit'>Submit</button>
+	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
 </form>
