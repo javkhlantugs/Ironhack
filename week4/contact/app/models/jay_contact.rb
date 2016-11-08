@@ -1,0 +1,2 @@
+class JayContact < ApplicationRecord
+end

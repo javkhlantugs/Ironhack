@@ -1,0 +1,11 @@
+<ul>
+<% @contacts.each do |contact| %>
+	<li><%= contact.name %>
+		<% if contact.phone == nil %>
+		<p>No phone number</p>
+		<% else %>
+		<p><%= contact.phone %></p>
+		<% end%>
+	</li>
+	<% end %>
+</ul>
