@@ -1,6 +1,7 @@
 <ul>
 <% @projects.each do |project| %>
-	<li><%= project.name %>
+	<li><%= link_to project.name, project_path(project) %>
+
 		<% if project.description == nil %>
 		<p>No Description</p>
 		<% else %>
@@ -9,3 +10,5 @@
 	</li>
 	<% end %>
 </ul>
+
+<%= link_to "create new project", projects_new_path %>

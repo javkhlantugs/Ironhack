@@ -8,5 +8,13 @@ Rails.application.routes.draw do
 	
 	get '/say_name/:name', to: 'site#say_name'
 	get '/projects', to: 'projects#index'
+
+	# create new form
+	get 'projects/new', to: 'projects#new'
+
+	# project_path exists
+	get 'projects/:id', {to: 'projects#show', as: "project"}
+
+	post '/projects', to: 'projects#create'
 end
 
