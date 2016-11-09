@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
     create_table :projects do |t|
       t.string :name
 
-      t.timestamps
+      t.timestamps 
     end
   end
 end
