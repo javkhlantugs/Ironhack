@@ -3,9 +3,6 @@ class ContactsController < ApplicationController
 		@contacts = JayContact.order(created_at: :ASC)
 		render 'index'
 	end
-	def home
-		render 'home'
-	end
 
 	def new
 		render 'new'
@@ -19,8 +16,11 @@ class ContactsController < ApplicationController
       :phone => params[:contact][:phone],)
     contact.save
 
-    render(:text => contact.attributes)
+    redirect_to("/contacts")
 	end
-
+	def show
+		@a_contact = JayContact.find(params[:id])
+		render 'show'
+	end
 
 end

@@ -1,5 +1,7 @@
+
 <ul>
-<% @contacts.each do |contact| %>
+<%    @final = @contacts.sort { |a,b| a.name.downcase <=> b.name.downcase } %>
+<% @final.each do |contact| %>
 	<li><%= contact.name %>
 		<% if contact.phone == nil %>
 		<p>No phone number</p>
@@ -7,5 +9,6 @@
 		<p><%= contact.phone %></p>
 		<% end%>
 	</li>
+	<%= link_to("See full details", contact_path(contact)) %>
 	<% end %>
 </ul>
