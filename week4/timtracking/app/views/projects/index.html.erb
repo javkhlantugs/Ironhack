@@ -7,6 +7,8 @@
 		<% else %>
 		<p><%= project.description %></p>
 		<% end%>
+
+		<%= link_to("See time_entries", project_time_entries_path(project)) %>
 	</li>
 	<% end %>
 </ul>

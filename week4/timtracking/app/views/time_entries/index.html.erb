@@ -1,0 +1,14 @@
+<h1><%= @my_projects.name %></h1>
+
+<ul>
+ <% @my_project.each do |x| %>
+ 	<li>
+ 	<%= x.hours %> h
+ 	<%= x.minutes %> m
+ 	<%= x.date%>
+ 	<%= link_to "Edit", edit_project_time_entry_path(@my_projects, x) %>
+ 	</li>
+ 	<% end %>
+
+ 	</ul>
+ <%= link_to "Add new time entry", new_project_time_entry_path(@my_projects) %>
