@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'site#index'
+  get '/', to: 'site#index', as: 'site'
 
 
   #page to display all users
-  get '/user', to: 'users#index'
+  resources :users do
+  	resources :products
+  end
 
-  get '/product', to: 'products#index'
+  get '/product/all', to: 'products#all'
 end

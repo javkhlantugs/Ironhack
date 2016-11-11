@@ -1,4 +1,5 @@
-<ol>
+<h3><%= @the_user.username %></h3>
+<ul>
 <% @products.each do |product| %>
 	<li><%= product.title %>
 	<% link_to 'Bid',  %>
@@ -8,4 +9,5 @@
 		</ul>	
 	</li>
 	<% end %>
-</ol>
+</ul>
+<%= link_to 'Post new product', new_user_product_path(@the_user) %>

@@ -1,0 +1,9 @@
+<h3>Create New Account</h3>
+<%= form_for @a_user do |user| %>
+	<%= user.label :username %>
+	<%= user.text_field :username %>
+
+	<%= user.label :email %>
+	<%= user.text_field :email %>
+	<%= user.button %>
+	<% end %>
