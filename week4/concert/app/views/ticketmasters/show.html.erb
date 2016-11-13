@@ -1,0 +1,12 @@
+
+  <h3><%= @name %></h3>  
+  <ul>
+    <li>Where: <%= "#{@theConcert.venue}, #{@theConcert.city}" %></li>
+    <li>When: <%= @theConcert.datetime %></li>
+    <li>Ticket price: <%= @theConcert.price %></li>
+  </ul>
+  <p><%= @theConcert.description %>
+
+  <p><%= link_to "Delete", ticketmaster_path(@theConcert), method: "delete", data: {confirm: "Are you Sure?"} %> 
+
+  <%= link_to 'Add Comments', new_ticketmaster_comment_path(@theConcert) %>

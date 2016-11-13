@@ -1,0 +1,24 @@
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Concerts Today</a></li>
+    <li><a href="#tabs-2">Concerts This Month</a></li>
+  </ul>
+  <div id="tabs-1">  
+  	<% @concerts.each do |concert| %>
+  		<% if concert.datetime > DateTime.now + 30.minutes && concert.datetime < DateTime.now.midnight + 26.hours %>
+  			<%= link_to concert.artist, ticketmaster_path(concert) %>
+  			<br>
+  			<%end%>
+  		<%end%>
+  </div>
+  
+  <div id="tabs-2">
+    	<% @concerts.each do |concert| %>
+  			<% if concert.datetime >= DateTime.now.midnight + 26.hours && concert.datetime < DateTime.now + 1.month %>
+  			<%= link_to concert.artist, ticketmaster_path(concert) %>
+  			<br>
+  			<%end%>
+  		<%end%>
+  </div>
+ 
+</div>
