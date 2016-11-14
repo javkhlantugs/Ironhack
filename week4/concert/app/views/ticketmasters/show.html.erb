@@ -8,5 +8,31 @@
   <p><%= @theConcert.description %>
 
   <p><%= link_to "Delete", ticketmaster_path(@theConcert), method: "delete", data: {confirm: "Are you Sure?"} %> 
+  <br>
 
   <%= link_to 'Add Comments', new_ticketmaster_comment_path(@theConcert) %>
+
+  <div class = 'comment_section'>
+  <% i = 1 %>
+  <% @theComments.each do |x| %>
+  	<% if i % 2 == 0 %>
+  	<div class = 'even'>
+  		<strong><%= x.name %></strong>
+  		<br>
+  		<%= x.created_at%>
+  		<br>
+  		<p><%= x.content %></p>
+  		<br>
+  		</div>
+  	<% else %>
+  <div class = 'odd'>
+  		<strong><%= x.name %></strong>
+  		<br>
+  		<%= x.created_at%>
+  		<br>
+  		<p><%= x.content %></p>
+  		<br>
+  		</div>
+  <% end %>
+  <% end %>
+  	</div>

@@ -2,6 +2,7 @@ class TicketmastersController < ApplicationController
 	def show
 		@theConcert = Ticketmaster.find(params[:id])
 		@name = @theConcert.artist
+		@theComments = @theConcert.comments
 		render 'show'
 	end
 
