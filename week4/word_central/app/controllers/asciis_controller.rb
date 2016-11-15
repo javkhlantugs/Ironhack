@@ -3,7 +3,7 @@ class AsciisController < ApplicationController
 		render 'new'
 	end
 	def create
-		s = Artii::Base.new
+		s = Artii::Base.new :font => "ogre"
 		@text = s.asciify(params[:text_inspection][:user_text])
 		render 'results'
 	end

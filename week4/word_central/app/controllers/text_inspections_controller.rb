@@ -9,9 +9,8 @@ class TextInspectionsController < ApplicationController
     array = @text.split(" ")
     @counts = Hash.new(0)
     array.each {|word| @counts[word] += 1}
-    sorted = @counts.sort_by {|word, repeat| repeat}
-    @final = sorted.reverse
-    @finalfinal = @final.slice(0..9)
+    sorted = @counts.sort_by {|word, repeat| -repeat}
+    @finalfinal = sorted.slice(0..9)
     render 'results'
   	end
 end
