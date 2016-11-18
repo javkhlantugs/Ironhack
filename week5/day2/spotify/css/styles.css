@@ -1,0 +1,34 @@
+
+.main {
+	text-align: center;
+}
+
+img {
+	width: 220px;
+	height: 220px;
+	margin-bottom: 12px;
+	margin-left: 3px;
+	margin-right: 3px;	
+}
+
+
+.poto{
+	margin: 13px;
+}
+
+.artists-result{
+	display: inline-block;
+}
+
+.floatart {
+	width: 220px;
+	height: 50px;
+	margin-left: 3px;
+	margin-right: 3px;	
+
+}
+
+h2 {
+	background-color: #1ED760;
+	height: 200px;
+}
