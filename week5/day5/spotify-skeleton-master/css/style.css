@@ -157,3 +157,9 @@ progress::-moz-progress-bar {
 .author-name:hover {
   cursor: pointer;
 }
+
+
+.artist-photo {
+  max-width: 200px;
+  max-height: 200px;
+}

@@ -27,8 +27,8 @@ function searchForSong(event) {
 //If searchForSong is successful
 
 function goToTrack(response) {
-	console.log("success");
-	console.log(response);
+	// console.log("success");
+	// console.log(response);
 	var artistName = response["tracks"]["items"][0]["artists"][0]["name"];
 	var songName = response["tracks"]["items"][0]["name"];
 	var coverImg = response["tracks"]["items"][0]["album"]["images"][0]["url"];
@@ -63,9 +63,24 @@ function authorDetails() {
 //show details about artists
 
 function showArtistDetails(response) {
-	var popularity = response["artists"]["items"][0]["popularity"]
-	console.log(response);
+	var artistResult = response["artists"]["items"][0]
+	var popularity = artistResult["popularity"];
+
+	console.log(artistResult)
+	var artistName = artistResult["name"]
+	$(".modal-header h2").empty();
+	$(".modal-header h2").text(`${artistName}`);
+
+
+	$(".js-modal").modal("show");
 	
+	if (artistResult["images"].length > 0){
+	var artistPhoto = artistResult["images"][0]["url"];
+	$(".modal-body").empty();
+	$(".modal-body").prepend(`<img src="${artistPhoto}" class="artist-photo">`);
+
+	}
+
 }
 
 //======================================
