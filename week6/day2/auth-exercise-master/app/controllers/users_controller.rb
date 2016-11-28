@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
-
+  before_action :check_if_logged_in, only: [:show]
+  before_action :check_if_admin, only: [:index]
+  before_action :get_current_user, only: [:home, :show]
   # renders the home page
 def home
-get_current_user
 render :home
 end
 
   def index
-    if session[:user_id]
     @users = User.all
     render :index
-  else
-    redirect_to "/login"
-  end
   end
 
   # renders the signup form
@@ -25,12 +22,7 @@ end
   end
 
   def show
-    if session[:user_id]
-    get_current_user
-      render :show
-    else
-      redirect_to "/login"
-    end
+    render :show
   end
 
   # receives form and creates a user from that data
@@ -41,6 +33,7 @@ end
     else
       redirect_to '/signup'
     end
+
   end   
 
   private

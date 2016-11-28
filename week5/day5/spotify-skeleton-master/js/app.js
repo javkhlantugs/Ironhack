@@ -63,9 +63,12 @@ function authorDetails() {
 //show details about artists
 
 function showArtistDetails(response) {
+	$(".modal-body").empty();
 	var artistResult = response["artists"]["items"][0]
 	var popularity = artistResult["popularity"];
-
+	if (artistResult["genres"].length > 0) {
+		$(".modal-body").
+	}
 	console.log(artistResult)
 	var artistName = artistResult["name"]
 	$(".modal-header h2").empty();
@@ -76,7 +79,6 @@ function showArtistDetails(response) {
 	
 	if (artistResult["images"].length > 0){
 	var artistPhoto = artistResult["images"][0]["url"];
-	$(".modal-body").empty();
 	$(".modal-body").prepend(`<img src="${artistPhoto}" class="artist-photo">`);
 
 	}

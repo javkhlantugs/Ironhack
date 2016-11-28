@@ -25,6 +25,6 @@ $(document).on("ready", function() {
 function AddIngredient () {
 		var ingredientId = $(this).data("ingredient-id");
 		var sandwichId = $(this).data("sandwich-id");
-
+		$.ajax
 }
 
