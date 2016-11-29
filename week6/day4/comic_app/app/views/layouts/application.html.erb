@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ComicApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<h1>Cmc bks</h1>
+
+  	<nav>
+  	<% if user_signed_in? %>
+  		<p> Welcome back</p>
+  		<%end %>
+  		<ul>
+  		<% if user_signed_in? %>
+  			<li> <%= link_to "Logout", destroy_user_session_path %></li>
+  			<% else %>
+  			<li> <%= link_to "Sign Up", new_user_registration_path %></li>
+ 
+  			<li> <%= link_to "Login", new_user_session_path %></li>
+  			<% end %>
+  		</ul>
+	<% if notice %>
+		<p class = 'notice'><%= notice %></p>
+		<% end %>
+
+	<% if alert %>
+		<p class='alert'><%= alert %></p>
+		<% end %>
+
+    <%= yield %>
+    <footer>
+    <p> Made with &hearts; at ironhack</p>
+    </footer>
+  </body>
+</html>

@@ -4,7 +4,7 @@
 <li>Bread: <%= @thesandwich.bread_type %></li>
 <li>Total Calories: <%= @thesandwich.total_calories %></li>
 <li>Ingredients: 
-		<ul>
+		<ul class='js-ingredient-list'>
 			<% @thesandwich.ingredients.each do |an_ingredient| %>
 			<li><%= an_ingredient.name %></li>
 			<% end %>
